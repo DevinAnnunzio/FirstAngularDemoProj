@@ -1,3 +1,19 @@
 <p>Changing default text and adding two server components</p>
 <app-server></app-server>
-<app-server></app-server>
+<hr>
+<p>square brackets indicate property binding</p>
+<button class="btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
+<br>
+<p>{{serverCreationStatus}}</p>
+<hr>
+<hr>
+
+<p [innerText]="allowNewServer"></p>
+<p>TEST</p>
+<p>{{ allowNewServer }}</p>
+
+<h3>GENERAL NOTES</h3>
+<p>Outputting something or print text use string interoplation</p>
+<p>changing property use property binding, do not mix the two though</p>
+<br>
+<hr>

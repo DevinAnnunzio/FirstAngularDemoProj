@@ -8,16 +8,27 @@ import { Component } from '@angular/core';
   //can also use by class
     //  selector: '.app-servers',
   
-  // templateUrl: './servers.component.html',
+  templateUrl: './servers.component.html',
   //Defining html code in file using the template below.  
   //To add multi line do the template at bottom using back ticks to use js template expressions
   // template: '<app-server></app-server><app-server></app-server>',
-  template: `
-  <app-server></app-server>
-  <app-server></app-server>
-  `,
+  // template: `
+  // <app-server></app-server>
+  // <app-server></app-server>
+  // `,
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
+  allowNewServer = false;
+  serverCreationStatus = 'No server was created';
 
+  constructor(){
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000)
+  }
+
+  onCreateServer(){
+    this.serverCreationStatus = 'Server was created!'
+  }
 }
