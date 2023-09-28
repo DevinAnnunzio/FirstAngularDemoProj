@@ -9,6 +9,12 @@
 <hr>
 <label>Server Name: {{serverName}}</label>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>Input above doesn't get updated when using 2 way binding input</p>
+<!--Easier way of binding data below this is two way data binding-->
+<!--Must have FormsModule to imports [] in app module-->
+<!--Trigger and update automatically, since 2 way it will auto update value if changed somewhere else-->
+<!--Uncomment input above since it isn't 2 way to see diff-->
+<input type="text" class="form-control" [(ngModel)]="serverName">
 <hr>
 
 
