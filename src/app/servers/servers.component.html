@@ -1,13 +1,18 @@
 <p>Changing default text and adding two server components</p>
 <app-server></app-server>
+<h3>Bindings</h3>
 <hr>
 <p>square brackets indicate property binding</p>
 <button class="btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
 <br>
 <p>{{serverCreationStatus}}</p>
 <hr>
+<label>Server Name: {{serverName}}</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
 <hr>
 
+
+<h3>PLAYGROUND</h3>
 <p [innerText]="allowNewServer"></p>
 <p>TEST</p>
 <p>{{ allowNewServer }}</p>
@@ -15,5 +20,10 @@
 <h3>GENERAL NOTES</h3>
 <p>Outputting something or print text use string interoplation</p>
 <p>changing property use property binding, do not mix the two though</p>
+<p>How do you know to which Properties or Events of HTML Elements you may bind? 
+    You can basically bind to all Properties and Events - a good idea is to console.log()  
+    the element you're interested in to see which properties and events it offers.  Googling for YOUR_ELEMENT properties  or 
+    YOUR_ELEMENT events  should yield nice results.</p>
 <br>
 <hr>
+<br>
