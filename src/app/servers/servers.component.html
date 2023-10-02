@@ -1,15 +1,15 @@
-<p>Changing default text and adding two server components</p>
+<!-- <p>Changing default text and adding two server components</p> -->
 <app-server></app-server>
-<h3>Bindings</h3>
-<hr>
-<p>square brackets indicate property binding</p>
+<!-- <h3>Bindings</h3> -->
+<!-- <hr> -->
+<!-- <p>square brackets indicate property binding</p> -->
 <button class="btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
-<br>
-<p>{{serverCreationStatus}}</p>
+<br>()
+<!-- <p>{{serverCreationStatus}}</p> -->
 <hr>
 <label>Server Name: {{serverName}}</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
-<p>Input above doesn't get updated when using 2 way binding input</p>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>Input above doesn't get updated when using 2 way binding input</p> -->
 <!--Easier way of binding data below this is two way data binding-->
 <!--Must have FormsModule to imports [] in app module-->
 <!--Trigger and update automatically, since 2 way it will auto update value if changed somewhere else-->
@@ -17,7 +17,12 @@
 <input type="text" class="form-control" [(ngModel)]="serverName">
 <hr>
 
-
+<p>Directive ngif example below: </p>
+<h4 *ngIf="serverCreated else noServer">Server name: {{serverName}}, with id: {{serverId}} status is: "{{serverCreationStatus}}"</h4>
+<ng-template #noServer>
+    <p>No server has been created yet</p>
+</ng-template>
+<!-- 
 <h3>PLAYGROUND</h3>
 <p [innerText]="allowNewServer"></p>
 <p>TEST</p>
@@ -32,4 +37,7 @@
     YOUR_ELEMENT events  should yield nice results.</p>
 <br>
 <hr>
+<br> -->
 <br>
+<h2>NGFOR EXAMPLE IS BELOW HERE</h2>
+<app-server *ngFor="let server of servers"></app-server>

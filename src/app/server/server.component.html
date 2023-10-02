@@ -1,7 +1,9 @@
 <hr>
 <p>The server component to start simple</p>
 <p>String interpolation example below:</p>
-<p>Server with id {{serverId}} is {{serverStatus}}</p>
+<!-- binding to a property of a directive. ngstyle expects a js object style name as key and value as value  -->
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">Server with id {{serverId}} is {{serverStatus}}</p>
+
 <p>Can use any expression that resolves to a string in the end like so : {{'example text'}}</p>
 <p>Can also call a method that returns a string {{ getServerStatus }}</p>
 <hr>
